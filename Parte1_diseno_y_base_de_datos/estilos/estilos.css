@@ -626,3 +626,26 @@ h2 small {
     flex: 0 0 auto;
   }
 }
+/* Barra de arriba en celular */
+@media (max-width: 600px) {
+  .barra {
+    height: auto;
+    padding: 8px 12px;
+    flex-wrap: wrap;
+    gap: 4px 12px;
+  }
+
+  .enlaces {
+    gap: 12px;
+    font-size: 0.9rem;
+  }
+
+  .enlaces a,
+  .carrito {
+    white-space: nowrap;
+  }
+
+  .marca span {
+    font-size: 0.95rem;
+  }
+}
