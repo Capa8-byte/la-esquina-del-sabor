@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Pedido confirmado - La Esquina del Sabor</title>
+  <link rel="stylesheet" href="/estilos/estilos.css">
+</head>
+<body>
+
+  <header class="barra">
+    <a class="marca" href="/">
+      <img src="/imagenes/logo.png" alt="Logo">
+      <span>La Esquina <b>del Sabor</b></span>
+    </a>
+
+    <nav class="enlaces">
+      <a href="/">🍴 Catálogo</a>
+      <a href="/carrito.html">🧾 Mi pedido</a>
+    </nav>
+
+    <a class="carrito" href="/carrito.html">🛒 Carrito (<span id="contador">0</span>)</a>
+  </header>
+
+  <main class="pagina">
+    <div class="dos-columnas">
+
+      <div>
+        <div class="marca-ok">✔</div>
+        <h1>¡Pedido confirmado!</h1>
+        <p>Gracias por elegir La Esquina del Sabor. Ya estamos preparando tus platos.</p>
+
+        <div class="caja repartidor">
+          <img src="/imagenes/repartidor.jpg" alt="Repartidor en moto">
+          <div class="hora-estimada">
+            <small>TIEMPO ESTIMADO</small><br>
+            <b id="tiempo-estimado">—</b>
+          </div>
+        </div>
+
+        <a class="boton" href="/">Volver al menú</a>
+      </div>
+
+      <aside class="caja">
+        <h3>Detalle del pedido <small id="codigo-pedido"></small></h3>
+        <div id="detalle-pedido"></div>
+      </aside>
+
+    </div>
+
+    <h2 class="centrado">Próximos pasos</h2>
+    <div class="pasos">
+      <div class="caja"><b>1. 👨‍🍳 En la cocina</b><p>El restaurante aceptó tu pedido y lo está preparando.</p></div>
+      <div class="caja"><b>2. 🛵 En camino</b><p>Un repartidor lo llevará caliente a tu puerta.</p></div>
+      <div class="caja"><b>3. 📍 ¡Buen provecho!</b><p>Te avisaremos cuando el repartidor esté cerca.</p></div>
+    </div>
+  </main>
+
+  <script src="/scripts/platos.js"></script>
+  <script src="/scripts/carrito_memoria.js"></script>
+  <script src="/scripts/confirmacion.js"></script>
+</body>
+</html>

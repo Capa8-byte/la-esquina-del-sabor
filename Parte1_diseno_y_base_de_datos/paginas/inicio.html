@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>La Esquina del Sabor</title>
+  <link rel="stylesheet" href="/estilos/estilos.css">
+</head>
+<body>
+
+  <header class="barra">
+    <a class="marca" href="/">
+      <img src="/imagenes/logo.png" alt="Logo">
+      <span>La Esquina <b>del Sabor</b></span>
+    </a>
+
+    <nav class="enlaces">
+      <a href="/catalogo.html">🍴 Catálogo</a>
+      <a href="/carrito.html">🧾 Mi pedido</a>
+    </nav>
+
+    <a class="carrito" href="/carrito.html">🛒 Carrito (<span id="contador">0</span>)</a>
+  </header>
+
+  <main class="portada">
+    <h1>Tus platos favoritos, <em>entregados al instante.</em></h1>
+    <p>Bienvenido a La Esquina del Sabor.</p>
+    <a class="boton" href="/catalogo.html">Ver el catálogo ›</a>
+  </main>
+
+  <section class="menu">
+    <h2>🔥 Los más pedidos</h2>
+    <div class="rejilla" id="mas-pedidos"></div>
+  </section>
+
+  <section class="menu">
+    <h2>Explora por categoría</h2>
+    <div class="categorias" id="categorias"></div>
+    <a class="boton" href="/catalogo.html">Ver todo el catálogo ›</a>
+  </section>
+
+  <script src="/scripts/platos.js"></script>
+  <script src="/scripts/carrito_memoria.js"></script>
+  <script src="/scripts/tarjetas.js"></script>
+  <script src="/scripts/menu.js"></script>
+</body>
+</html>

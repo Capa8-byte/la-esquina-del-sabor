@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Pago - La Esquina del Sabor</title>
+  <link rel="stylesheet" href="/estilos/estilos.css">
+</head>
+<body>
+
+  <header class="barra">
+    <a class="marca" href="/">
+      <img src="/imagenes/logo.png" alt="Logo">
+      <span>La Esquina <b>del Sabor</b></span>
+    </a>
+
+    <nav class="enlaces">
+     <a href="/catalogo.html">🍴 Catálogo</a>
+      <a href="/carrito.html">🧾 Mi pedido</a>
+    </nav>
+
+    <a class="carrito" href="/carrito.html">🛒 Carrito (<span id="contador">0</span>)</a>
+  </header>
+
+  <main class="pagina">
+    <a class="volver" href="/carrito.html">← Volver al carrito</a>
+    <h1>Finalizar Pedido</h1>
+
+    <form class="dos-columnas" onsubmit="enviarPedido(event)">
+
+      <div>
+        <!-- Paso 1: datos de entrega -->
+        <section class="caja paso-pago">
+          <h3>1. Dirección de entrega</h3>
+          <div class="formulario">
+            <div>
+              <label for="nombre">Nombre completo</label>
+              <input id="nombre">
+            </div>
+            <div>
+              <label for="direccion">Calle o avenida</label>
+              <input id="direccion">
+            </div>
+            <div>
+              <label for="correo">Correo electrónico</label>
+              <input id="correo" type="email">
+            </div>
+            <div>
+              <label for="telefono">Teléfono de contacto</label>
+              <input id="telefono" type="tel">
+            </div>
+            <div class="completo">
+              <label for="notas">Instrucciones para el repartidor (opcional)</label>
+              <textarea id="notas" rows="3"></textarea>
+            </div>
+          </div>
+        </section>
+
+        <!-- Paso 2: tipo de envío -->
+        <section class="caja paso-pago">
+          <h3>2. Tipo de envío</h3>
+
+          <label class="opcion elegida">
+            <input type="radio" name="envio" checked onchange="elegirEnvio('estandar')">
+            <span><b>Envío estándar</b><br><small>Entrega en 30–45 min</small></span>
+            <b class="costo">Q3.00</b>
+          </label>
+
+          <label class="opcion">
+            <input type="radio" name="envio" onchange="elegirEnvio('express')">
+            <span><b>Envío express</b><br><small>Entrega en 15–25 min</small></span>
+            <b class="costo">Q5.00</b>
+          </label>
+        </section>
+
+        <!-- Paso 3: forma de pago -->
+        <section class="caja paso-pago">
+          <h3>3. Forma de pago</h3>
+
+          <label class="opcion elegida">
+            <input type="radio" name="pago" checked onchange="elegirPago('tarjeta')">
+            <span><b>💳 Tarjeta de crédito o débito</b></span>
+          </label>
+
+          <div id="datos-tarjeta" class="formulario cuadro-tarjeta">
+            <div class="completo">
+              <label for="numero-tarjeta">Número de tarjeta</label>
+              <input id="numero-tarjeta" placeholder="0000 0000 0000 0000" oninput="darFormatoTarjeta()">
+            </div>
+            <div>
+              <label for="vencimiento">Vencimiento</label>
+              <input id="vencimiento" placeholder="MM/AA" oninput="darFormatoVencimiento()">
+            </div>
+            <div>
+              <label for="cvv">CVC / CVV</label>
+              <input id="cvv" maxlength="4" placeholder="123">
+            </div>
+          </div>
+
+          <label class="opcion">
+            <input type="radio" name="pago" onchange="elegirPago('contra_entrega')">
+            <span><b>💵 Pago contra entrega</b><br><small>Pagas en efectivo cuando recibes tu pedido</small></span>
+          </label>
+        </section>
+      </div>
+
+      <!-- Resumen -->
+      <aside class="caja">
+        <h3>Tu pedido</h3>
+        <div id="platos-resumen"></div>
+        <div id="totales-resumen"></div>
+        <p class="mensaje-error" id="mensaje-error"></p>
+        <button class="boton boton-ancho" type="submit">Realizar Pedido</button>
+      </aside>
+
+    </form>
+  </main>
+
+  <script src="/scripts/platos.js"></script>
+  <script src="/scripts/carrito_memoria.js"></script>
+  <script src="/scripts/pago.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Catálogo - La Esquina del Sabor</title>
+  <link rel="stylesheet" href="/estilos/estilos.css">
+</head>
+<body>
+
+  <header class="barra">
+    <a class="marca" href="/">
+      <img src="/imagenes/logo.png" alt="Logo">
+      <span>La Esquina <b>del Sabor</b></span>
+    </a>
+
+    <nav class="enlaces">
+      <a class="activo" href="/catalogo.html">🍴 Catálogo</a>
+      <a href="/carrito.html">🧾 Mi pedido</a>
+    </nav>
+
+    <a class="carrito" href="/carrito.html">🛒 Carrito (<span id="contador">0</span>)</a>
+  </header>
+
+  <main class="pagina">
+    <h1>Catálogo</h1>
+    <p>Todos nuestros platos, postres, bebidas y extras.</p>
+
+    <div class="herramientas">
+      <input id="buscador" type="search" placeholder="🔍 ¿Qué te apetece hoy?" oninput="buscar()">
+      <select id="orden" onchange="cambiarOrden()">
+        <option value="popular">Más populares</option>
+        <option value="precio-menor">Precio: menor a mayor</option>
+        <option value="precio-mayor">Precio: mayor a menor</option>
+      </select>
+    </div>
+
+    <div class="categorias" id="categorias"></div>
+
+    <h2>Menú <small id="cantidad"></small></h2>
+    <div class="rejilla" id="menu"></div>
+
+       <section class="seccion-extras">
+      <h2>➕ Complementa tu pedido</h2>
+      <p>Papas, salsas y más para acompañar tus platos.</p>
+      <div class="rejilla-extras" id="extras"></div>
+    </section>
+  </main>
+
+  <script src="/scripts/platos.js"></script>
+  <script src="/scripts/carrito_memoria.js"></script>
+  <script src="/scripts/tarjetas.js"></script>
+  <script src="/scripts/catalogo.js"></script>
+</body>
+</html>
